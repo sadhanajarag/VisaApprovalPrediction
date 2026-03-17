@@ -59,6 +59,7 @@ class DataIngestion:
          logging.info("Entered split_data_as_train_test method of Data_Ingestion class")
 
          try:
+             print("Number of rows fetched:", len(dataframe))
              train_set,test_set = train_test_split(dataframe,test_size=self.data_ingestion_config.train_test_split_ratio)
              logging.info("Performed train test split on dataframe")
              logging.info(
@@ -68,15 +69,15 @@ class DataIngestion:
              os.makedirs(dir_path,exist_ok=True)
 
              logging.info(f"Exporting the train and test file path")
-             train_set.to_csv(self.data_ingestion_config.training_file_path,index=False,header= True)
-             test_set.to_csv(self,self.data_ingestion_config.testing_file_path,index= False,header = True)
+             train_set.to_csv(self.data_ingestion_config.training_file_path, index=False, header=True)
+             test_set.to_csv(self.data_ingestion_config.testing_file_path, index=False, header=True)
 
              logging.info(f"Exported the train and test file path")
         
          except Exception as e:
              raise USvisaException(e,sys) from e
          
-         def initiate_data_ingestion(self) ->DataIngestionArtifact:
+    def initiate_data_ingestion(self) ->DataIngestionArtifact:
              """
                 Method Name :   initiate_data_ingestion
                 Description :   This method initiates the data ingestion components of training pipeline 
@@ -105,7 +106,6 @@ class DataIngestion:
              except Exception as e:
                  raise USvisaException(e, sys) from e
                  
-
 
 
 

@@ -2,14 +2,10 @@ import os
 from datetime import date
 
 #create the Mango DB and collections and insert data 
-#DB_NAME = "US_VISA_APPROVAL_DATA"
-#COLLECTION_NAME = "VISA_DATA"
-#COLLECTION_URL = "mongodb+srv://sadhana20jarag:Oracle421#@cluster0.adt4rdb.mongodb.net/?appName=Cluster0"
-
-DATABASE_NAME = "US_VISA"
-
+DB_NAME = "US_VISA_APPROVAL_DATA"
+#MONGODB_URL="mongodb+srv://sadhana20jarag:Oracle421#@cluster0.adt4rdb.mongodb.net/?appName=Cluster0"
+DATABASE_NAME = "US_VISA_APPROVAL_DATA"
 COLLECTION_NAME = "VISA_DATA"
-
 MONGODB_URL_KEY = "MONGODB_URL"
 
 PIPELINE_NAME: str = "usvisa"
@@ -36,7 +32,7 @@ REGION_NAME = "us-east-1"
 """
 Data Ingestion related constant start with DATA_INGESTION VAR NAME
 """
-DATA_INGESTION_COLLECTION_NAME: str = "visa_data"
+DATA_INGESTION_COLLECTION_NAME: str = "VISA_DATA"
 DATA_INGESTION_DIR_NAME: str = "data_ingestion"
 DATA_INGESTION_FEATURE_STORE_DIR: str = "feature_store"
 DATA_INGESTION_INGESTED_DIR: str = "ingested"
